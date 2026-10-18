@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Verbal Area — A space to learn and connect</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4efe8;--card:#fbf8f3;--ink:#6b3f50;--ink2:#8a6573;--line:#e2d8ce;--on:#fbf8f3;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#241a1e;--card:#2e2227;--ink:#e6c9d4;--ink2:#b99aa7;--line:#43323a;--on:#241a1e;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#241a1e;--card:#2e2227;--ink:#e6c9d4;--ink2:#b99aa7;--line:#43323a;--on:#241a1e;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:300 16px/1.7 Inter,system-ui,sans-serif;letter-spacing:.01em}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:400;margin:0;line-height:1.15}
+h1{font-size:clamp(40px,8vw,84px);letter-spacing:.06em;text-transform:uppercase}
+h2{font-size:clamp(30px,5vw,48px);margin-bottom:.4em}
+h3{font-size:24px}
+a{color:inherit}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+.bar{max-width:1040px;margin:auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:"Cormorant Garamond",Georgia,serif;letter-spacing:.18em;text-transform:uppercase;font-size:17px}
+.brand svg{width:34px;height:26px}
+nav{display:flex;flex-wrap:wrap;gap:4px 18px;font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+nav a{text-decoration:none;color:var(--ink2);padding:4px 0;border-bottom:1px solid transparent}
+nav a.on,nav a:hover{color:var(--ink);border-color:var(--ink)}
+main{max-width:1040px;margin:auto;padding:56px 20px 80px}
+.blob{position:fixed;z-index:-1;border-radius:50%;background:var(--ink);opacity:.9}
+.b1{width:420px;height:420px;left:-230px;top:-250px}.b2{width:520px;height:520px;right:-300px;bottom:-330px}
+.hero{text-align:center;padding:40px 0 20px}
+.hero .logo{width:120px;height:90px;margin:0 auto 24px;display:block}
+.tag{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink2);margin-bottom:14px}
+.slogan{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:26px;color:var(--ink2);margin:14px 0 28px}
+.lead{max-width:560px;margin:0 auto 32px;color:var(--ink2)}
+.btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 28px;border:1px solid var(--ink);border-radius:999px;text-decoration:none;font-size:13px;letter-spacing:.12em;text-transform:uppercase;background:transparent;color:var(--ink);cursor:pointer;font-family:inherit}
+.btn.fill{background:var(--ink);color:var(--on)}
+.btn:hover{opacity:.85}
+.btn[aria-disabled="true"]{opacity:.4;pointer-events:none}
+.sub{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;color:var(--ink2);margin-top:60px;text-align:center;letter-spacing:.08em}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px;margin:28px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:10px}
+.card p{margin:0;color:var(--ink2);font-size:15px}
+.meta{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2)}
+.meta b{font-weight:500;color:var(--ink)}
+.badge{align-self:flex-start;font-size:11px;letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--ink);border-radius:999px;padding:3px 12px}
+.badge.soon{border-style:dashed;color:var(--ink2);border-color:var(--ink2)}
+.card .btn{margin-top:auto;text-align:center;padding:10px 18px}
+.num{font-family:"Cormorant Garamond",Georgia,serif;font-size:44px;line-height:1}
+.lede{max-width:680px;color:var(--ink2);font-size:17px}
+ul.l{padding-left:18px;color:var(--ink2)}ul.l li{margin:6px 0}
+.sec{margin-top:48px}
+label{display:block;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);margin:18px 0 6px}
+input,select,textarea{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--ink);font:inherit}
+input:focus,select:focus,textarea:focus{outline:1px solid var(--ink)}
+.form{max-width:560px;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:12px 28px 28px;margin-top:24px}
+.ok{padding:30px;text-align:center}
+.tabs{display:flex;gap:8px;margin-top:24px;flex-wrap:wrap}
+.verify{display:flex;gap:10px;flex-wrap:wrap;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px;margin-bottom:36px}
+.verify input{flex:1;min-width:200px}
+.res{width:100%;margin:0;font-size:15px}
+.links{display:grid;gap:12px;margin-top:24px;max-width:520px}
+.links a{display:flex;justify-content:space-between;padding:16px 22px;border:1px solid var(--line);border-radius:16px;background:var(--card);text-decoration:none}
+footer{text-align:center;padding:30px 20px 50px;font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;color:var(--ink2)}
+@media(max-width:600px){main{padding-top:36px}}
+</style>
+</head>
+<body>
+<div class="blob b1"></div><div class="blob b2"></div>
+<header><div class="bar">
+<a class="brand" href="#/"><svg viewBox="0 0 120 90" fill="currentColor"><use href="#logo"/></svg>Verbal Area</a>
+<nav id="nav"></nav></div></header>
+<main id="app"></main>
+<footer>Learn together. Grow together.</footer>
+
+<svg width="0" height="0" style="position:absolute"><defs>
+<path id="logo" d="M4 8C22 4 44 4 52 14C60 26 48 40 46 50C45 56 52 56 56 50C62 40 62 28 66 18L74 8C82 20 84 38 92 54C98 66 108 74 118 80C102 84 84 82 76 70C72 64 72 56 72 52C68 54 64 64 60 72C54 84 42 82 36 72C24 52 12 26 4 8Z"/>
+</defs></svg>
+
+<script>
+/* ============ РЕДАКТИРУЕМЫЕ ДАННЫЕ ============ */
+const CONFIG={
+  courseForm:"#/apply",          // можно заменить на ссылку Google Forms: "https://forms.gle/..."
+  volunteerForm:"#/apply-volunteer", // то же самое для волонтёров
+  telegramChannel:"https://t.me/your_channel",
+  adminTelegram:"your_admin_username",  // без @, используется для отправки заявки в Telegram
+  email:"hello@verbalarea.org",
+  tiktok:"https://www.tiktok.com/@verbalarea",
+  others:[{name:"Instagram",url:"https://instagram.com/verbalarea"}]
+};
+const COURSES=[
+ {t:"English A1",lang:"Английский",level:"A1 — начальный",fmt:"Онлайн, группа 6–10 человек",d:"Знакомство с языком: алфавит, базовая лексика, простые диалоги.",open:true},
+ {t:"English A2",lang:"Английский",level:"A2 — элементарный",fmt:"Онлайн, группа 6–10 человек",d:"Повседневное общение, времена, расширение словарного запаса.",open:true},
+ {t:"English B1",lang:"Английский",level:"B1 — средний",fmt:"Онлайн, группа 6–10 человек",d:"Уверенная речь на привычные темы, чтение и аудирование.",open:false},
+ {t:"English B2",lang:"Английский",level:"B2 — выше среднего",fmt:"Онлайн, группа 6–10 человек",d:"Свободное общение, дискуссии, сложные тексты.",open:false},
+ {t:"Speaking Club",lang:"Английский",level:"От A2",fmt:"Онлайн, разговорные встречи",d:"Живое общение на темы по интересам и практика речи.",open:true},
+ {t:"Другие языки с нуля",lang:"Другие языки",level:"Начальный",fmt:"Уточняется",d:"Курсы с нуля на других языках. Список языков появится позже.",open:false}
+];
+const CLASSES=[
+ ["0 ₽","Занятия бесплатные"],["1","Волонтёр-преподаватель на поток"],["6–10","Учеников в группе"],["16–24","Занятий в курсе"]
+];
+const CLASS_NOTE="Условия могут различаться в зависимости от программы. Точные параметры указаны в описании каждого курса.";
+const CERTS={ /* код сертификата → данные */
+ "VA-2026-0001":{name:"Пример Участник",course:"English A1",date:"2026"}
+};
+/* ============================================== */
+
+const logo=(c)=>`<svg class="${c||''}" viewBox="0 0 120 90" fill="currentColor"><use href="#logo"/></svg>`;
+const routes=[["","Главная"],["about","О проекте"],["courses","Курсы"],["classes","О занятиях"],["volunteers","Волонтёрам"],["certificates","Сертификаты"],["contacts","Контакты"]];
+const isExt=u=>/^https?:/.test(u);
+const lnk=(u,txt,cls)=>`<a class="btn ${cls||''}" href="${u}" ${isExt(u)?'target="_blank" rel="noopener"':''}>${txt}</a>`;
+
+const pages={
+home:()=>`<section class="hero">${logo('logo')}<div class="tag">#Welcome to</div><h1>Verbal Area</h1>
+<div class="slogan">A space to learn and connect.</div>
+<p class="lead">Образовательный языковой проект, который делает изучение иностранных языков доступнее: бесплатные занятия, волонтёры-преподаватели и сообщество, где знаниями можно делиться.</p>
+<div class="btns">${lnk(CONFIG.courseForm,'Записаться на курс','fill')}${lnk(CONFIG.volunteerForm,'Стать волонтёром')}</div>
+<div class="sub">— Learn together. Grow together.</div></section>`,
+
+about:()=>`<h2>О проекте</h2>
+<p class="lede">Verbal Area — образовательный языковой проект, который мы создаём, чтобы сделать изучение иностранных языков доступнее. Мы объединяем учеников, волонтёров-преподавателей и людей, которым интересно изучать языки и культуры других стран.</p>
+<div class="grid">
+<div class="card"><h3>Миссия</h3><p>Сделать изучение языков доступным для каждого и построить сообщество, в котором знаниями можно делиться.</p></div>
+<div class="card"><h3>Цели</h3><p>Развивать бесплатные языковые занятия, создавать учебные материалы, объединять учеников и волонтёров.</p></div>
+<div class="card"><h3>Что мы делаем</h3><p>Проводим групповые курсы, разговорные клубы и готовим материалы для самостоятельного обучения.</p></div></div>
+<div class="sec"><h2>Ценности</h2><div class="grid">
+<div class="card"><h3>Доступность</h3><p>Обучение без финансовых барьеров.</p></div>
+<div class="card"><h3>Сообщество</h3><p>Мы учимся и растём вместе.</p></div>
+<div class="card"><h3>Взаимопомощь</h3><p>Волонтёрство и обмен знаниями в основе проекта.</p></div>
+<div class="card"><h3>Уважение к культурам</h3><p>Язык — это ещё и способ узнать другие страны.</p></div></div></div>`,
+
+courses:()=>`<h2>Курсы</h2><p class="lede">Выберите подходящий курс. Если набор ещё не открыт, у курса будет отметка «Скоро».</p>
+<div class="grid">${COURSES.map(c=>`<div class="card"><span class="badge ${c.open?'':'soon'}">${c.open?'Идёт набор':'Скоро'}</span>
+<h3>${c.t}</h3><div class="meta">Уровень: <b>${c.level}</b></div><div class="meta">Формат: <b>${c.fmt}</b></div><p>${c.d}</p>
+${c.open?lnk(CONFIG.courseForm,'Подать заявку','fill'):'<a class="btn" aria-disabled="true">Набор не открыт</a>'}</div>`).join('')}</div>
+<p class="meta">Скоро появится больше информации о курсах.</p>`,
+
+classes:()=>`<h2>О занятиях</h2><p class="lede">Как устроено обучение в Verbal Area.</p>
+<div class="grid">${CLASSES.map(c=>`<div class="card"><div class="num">${c[0]}</div><p>${c[1]}</p></div>`).join('')}</div>
+<p class="lede">${CLASS_NOTE}</p>`,
+
+volunteers:()=>`<h2>Волонтёрам</h2><p class="lede">Присоединяйтесь к команде Verbal Area и помогайте делать изучение языков доступнее.</p>
+<div class="grid">
+<div class="card"><h3>Преподаватели</h3><p>Ведите группу и помогайте ученикам делать первые шаги в языке.</p></div>
+<div class="card"><h3>Учебные материалы</h3><p>Создавайте конспекты, карточки, задания и другие материалы.</p></div>
+<div class="card"><h3>Другая помощь</h3><p>Организация, соцсети, дизайн, перевод и другие задачи проекта.</p></div></div>
+<div class="sec"><h2>Требования</h2><ul class="l"><li>Возраст от 16 лет</li><li>Уровень языка B1–C1 в зависимости от роли и программы</li><li>Готовность выделять время и работать в команде</li></ul>
+<p style="margin-top:28px">${lnk(CONFIG.volunteerForm,'Подать заявку','fill')}</p></div>`,
+
+certificates:()=>`<h2>Сертификаты</h2>
+<div class="verify"><input id="code" placeholder="Введите номер сертификата, например VA-2026-0001" aria-label="Номер сертификата"><button class="btn fill" onclick="verify()">Проверить</button><p class="res" id="res"></p></div>
+<div class="grid"><div class="card"><h3>Для участников</h3><p>По завершении курса участники могут получить сертификат проекта.</p>
+<ul class="l"><li>Посещение не менее 75% занятий</li><li>Выполнение итогового задания</li></ul></div>
+<div class="card"><h3>Для волонтёров-преподавателей</h3><p>Сертификат волонтёрской деятельности за проведённый курс.</p>
+<ul class="l"><li>Завершённый курс</li><li>Подтверждение от координатора</li></ul></div></div>
+<p class="meta">Точные условия получения могут уточняться для разных программ.</p>`,
+
+contacts:()=>`<h2>Контакты и соцсети</h2><p class="lede">Следите за новостями набора и пишите нам с вопросами.</p>
+<div class="links"><a href="${CONFIG.telegramChannel}" target="_blank" rel="noopener"><span>Telegram-канал</span><span>→</span></a>
+<a href="mailto:${CONFIG.email}"><span>Вопросы: ${CONFIG.email}</span><span>→</span></a>
+<a href="${CONFIG.tiktok}" target="_blank" rel="noopener"><span>TikTok</span><span>→</span></a>
+${CONFIG.others.map(o=>`<a href="${o.url}" target="_blank" rel="noopener"><span>${o.name}</span><span>→</span></a>`).join('')}</div>`,
+
+apply:()=>formPage('Заявка на обучение','study',`
+<label>Имя</label><input name="name" required>
+<label>Возраст</label><input name="age" type="number" min="5" max="99" required>
+<label>Контакт для связи</label><input name="contact" placeholder="Telegram, телефон или email" required>
+<label>Выбранный язык и курс</label><select name="course" required>${COURSES.map(c=>`<option>${c.t}</option>`).join('')}</select>
+<label>Текущий уровень</label><input name="level" placeholder="Например, A1 или «с нуля»" required>
+<label>Цель обучения</label><textarea name="goal" rows="3" required></textarea>`),
+
+'apply-volunteer':()=>formPage('Заявка на волонтёрство','volunteer',`
+<label>Имя</label><input name="name" required>
+<label>Возраст</label><input name="age" type="number" min="16" max="99" required>
+<label>Контакт для связи</label><input name="contact" placeholder="Telegram, телефон или email" required>
+<label>Желаемая роль</label><select name="role"><option>Преподаватель</option><option>Создание учебных материалов</option><option>Другая помощь</option></select>
+<label>Уровень языка (если применимо)</label><select name="lang"><option>—</option><option>B1</option><option>B2</option><option>C1</option><option>C2</option></select>
+<label>О себе и мотивация</label><textarea name="about" rows="4" required></textarea>`)
+};
+
+function formPage(title,kind,fields){return `<h2>${title}</h2><p class="lede">Заполните форму, и мы свяжемся с вами.</p>
+<div id="fbox" class="form"><form onsubmit="return send(event,'${kind}','${title}')">${fields}
+<div style="margin-top:26px"><button class="btn fill" type="submit">Отправить заявку</button></div></form></div>`}
+
+async function send(e,kind,title){
+  e.preventDefault();
+  const f=e.target,data=Object.fromEntries(new FormData(f));
+  const rec={kind,title,data,at:new Date().toISOString()};
+  let saved=false;
+  try{
+    const db=window.claude&&await claude.use("db");
+    if(db){await db.collection("applications").doc(kind+"-"+Date.now()).set(rec);saved=true}
+  }catch(err){}
+  let extra="";
+  if(!saved){
+    const txt=encodeURIComponent(title+"\n"+Object.entries(data).map(([k,v])=>k+": "+v).join("\n"));
+    extra=`<p style="margin-top:18px">${lnk('https://t.me/'+CONFIG.adminTelegram+'?text='+txt,'Отправить администратору в Telegram','fill')}</p>`;
+  }
+  document.getElementById("fbox").innerHTML=`<div class="ok"><h3>${saved?'Заявка успешно отправлена':'Почти готово'}</h3>
+  <p>${saved?'Спасибо! Мы свяжемся с вами в ближайшее время.':'Нажмите кнопку ниже, чтобы отправить заявку администратору.'}</p>${extra}</div>`;
+  return false;
+}
+function verify(){
+  const v=document.getElementById("code").value.trim().toUpperCase(),r=document.getElementById("res"),c=CERTS[v];
+  r.textContent=!v?"":c?`✓ Сертификат подлинный: ${c.name}, ${c.course}, ${c.date}`:"Сертификат с таким номером не найден.";
+}
+function route(){
+  const k=(location.hash.replace(/^#\/?/,'')||'');
+  const key=k===''?'home':k;
+  document.getElementById("app").innerHTML=(pages[key]||pages.home)();
+  document.getElementById("nav").innerHTML=routes.map(([p,n])=>`<a href="#/${p}" class="${p===k?'on':''}">${n}</a>`).join('');
+  scrollTo(0,0);
+}
+addEventListener("hashchange",route);route();
+</script>
+</body>
+</html>
